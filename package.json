@@ -1,0 +1,22 @@
+{
+  "name": "tomato",
+  "version": "1.0.0",
+  "description": "try to build a desktop app by using electron",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SCyanCat/tomato.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SCyanCat/tomato/issues"
+  },
+  "homepage": "https://github.com/SCyanCat/tomato#readme",
+  "devDependencies": {
+    "electron": "^2.0.0-beta.4"
+  }
+}
