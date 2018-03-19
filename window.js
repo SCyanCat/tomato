@@ -8,11 +8,11 @@ const url = require('url')
 
   function createWindow () {
     // 创建浏览器窗口。
-    win = new BrowserWindow({width: 800, height: 600})
+    win = new BrowserWindow({ width: 800, height: 600 })
 
     // 然后加载应用的 index.html。
     win.loadURL(url.format({
-      pathname: path.join(__dirname, 'index.html'),
+      pathname: path.join(__dirname, 'dist/index.html'),
       protocol: 'file:',
       slashes: true
     }))
@@ -32,6 +32,7 @@ const url = require('url')
   // Electron 会在初始化后并准备
   // 创建浏览器窗口时，调用这个函数。
   // 部分 API 在 ready 事件触发后才能使用。
+  console.log(app)
   app.on('ready', createWindow)
 
   // 当全部窗口关闭时退出。

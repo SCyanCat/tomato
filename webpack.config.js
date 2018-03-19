@@ -1,6 +1,13 @@
 const webpack = require('webpack')
-
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 module.exports = {
+  target: 'electron-renderer',
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: './template.html',
+      title: 'Output Management'
+    })
+  ],
   module: {
     rules: [{
       test: /\.js?$/,
@@ -8,7 +15,7 @@ module.exports = {
       use: [{
         loader: 'babel-loader',
         query: {
-          presets: ['es2015', 'react', 'stage-0', 'react-hmre'],
+          presets: ['es2015', 'react', 'stage-0'],
           plugins: [
             'transform-decorators-legacy', 'transform-runtime', 'add-module-exports',
             ['import', { libraryName: 'antd', style: true }], // `style: true` 会加载 less 文件
