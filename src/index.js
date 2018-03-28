@@ -2,6 +2,8 @@ import React from 'react'
 import { render } from 'react-dom'
 import { remote } from 'electron'
 import path from 'path'
+import MyTray from './tray/tray.js'
+
 class App extends React.Component {
   componentDidMount() {
     console.log(1112)
@@ -27,7 +29,9 @@ class App extends React.Component {
 
   render() {
     return (
-      <h1>this is React desktop app </h1>
+      <div>
+        <MyTray />
+      </div>
     )
   }
 }

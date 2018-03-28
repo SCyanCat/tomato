@@ -8,6 +8,7 @@ module.exports = {
       title: 'Output Management'
     })
   ],
+  devtool: 'inline-source-map',
   module: {
     rules: [{
       test: /\.js?$/,

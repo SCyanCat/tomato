@@ -1,4 +1,4 @@
-{
+module.exports = {
     "extends": "airbnb",
     "plugins": [
         "react",
@@ -35,7 +35,7 @@
         "no-multiple-empty-lines": [1, { max: 2}],
         "no-param-reassign": 0,
         "no-trailing-spaces": [2, {
-          "skipBlankLines": true
+            "skipBlankLines": true
         }],
         "no-underscore-dangle": 0,
         "no-duplicate-imports": 0,
@@ -54,5 +54,5 @@
         "react/react-in-jsx-scope": 0,
 
         "jsx-a11y/no-static-element-interactions": 0
-      }
+    }
 }

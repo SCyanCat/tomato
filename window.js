@@ -1,10 +1,24 @@
-const {app, BrowserWindow} = require('electron')
+const { app, BrowserWindow, Menu, Tray } = require('electron')
 const path = require('path')
 const url = require('url')
 
   // 保持一个对于 window 对象的全局引用，如果你不这样做，
   // 当 JavaScript 对象被垃圾回收， window 会被自动地关闭
   let win
+
+  createTray = () => {
+    let tray = null
+    tray = new Tray(path.join(__dirname, 'static/img/icon_xuan.jpg'))
+    const contextMenu = Menu.buildFromTemplate([
+      {label: 'Item1', type: 'radio'},
+      {label: 'Item2', type: 'radio'},
+      {label: 'Item3', type: 'radio', checked: true},
+      {label: 'Item4', type: 'radio'}
+    ])
+    tray.setToolTip('This is my application.')
+    tray.setContextMenu(contextMenu)
+    console.log(tray)
+  }
 
   function createWindow () {
     // 创建浏览器窗口。
@@ -27,6 +41,7 @@ const url = require('url')
       // 与此同时，你应该删除相应的元素。
       win = null
     })
+    createTray()
   }
 
   // Electron 会在初始化后并准备
